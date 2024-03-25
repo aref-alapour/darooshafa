@@ -1,0 +1,64 @@
+.before-footer {
+    background-color: $color-primary;
+    color: $color-white;
+    padding: 10px 0;
+    & .details {
+        @include flex (space-between, center, row, wrap);
+        gap: 10px;
+        & .item {
+            width: 60px;
+            height: 60px;
+            @media screen and (min-width: 576px) {
+                width: 70px;
+            height: 70px;
+    }
+        }
+    }
+}
+footer {
+    font-size: smaller;
+    background-color: $color-primary-light;
+    & .social-footer {
+        & a > svg {
+            font-size: 1.5rem;
+    top: 50%;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50% , -50%);
+    color: $color-black;
+        }
+    }
+    .email-input-newsletter {
+        border-color: $color-primary-hover;
+    }
+    & p {
+        margin-bottom: 0;
+    }
+    .copy-right {
+        font-size: smaller;
+    }
+    & .footer-menu {
+
+        & ul {
+
+            & > li a {
+             position: relative;
+            &::after {
+                content: "";
+                position: absolute;
+                width: 0;
+                height: 1px;
+                right: 0;
+                bottom: 0;
+                background-color: $color-primary;
+                transition: $hover-transition;
+            }
+            &:hover {
+                &::after {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+}

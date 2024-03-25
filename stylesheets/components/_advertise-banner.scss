@@ -1,0 +1,22 @@
+.advertise-banner {
+    @include flex (center, center, row, wrap);
+    row-gap: 20px;
+    column-gap: 15px;
+    @media screen and (min-width: 768px) {
+                column-gap: 20px;
+    }
+    @media screen and (min-width: 1200px) {
+                justify-content: space-between;
+    }
+    & .item {
+        width: 250px;
+        height: 250px;
+        & img {
+            width: 250px;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 20px;
+            @extend %box-shadow-theme;
+        }
+    }
+}

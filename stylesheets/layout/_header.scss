@@ -1,0 +1,412 @@
+.top-menu,
+.main-navbar {
+    @include flex(space-between, center);
+    width: 100%;
+    z-index: 999;
+}
+.top-nav-menu {
+    background-color: #dbe6ffc4 !important;
+}
+.main-navbar {
+    & .nav-btn {
+        background-color: $color-white;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        @include flex(center, center);
+        color: $color-primary;
+        cursor: pointer;
+        transition: $hover-transition;
+        &:hover {
+            transform: scale(1.05);
+        }
+    }
+}
+.top-menu {
+    & div > ul > li {
+        &::after {
+            content: "";
+            position: absolute;
+            width: 0;
+            height: 1px;
+            right: 0;
+            bottom: 0;
+            background-color: $color-primary;
+            transition: $hover-transition;
+        }
+        &:hover {
+            &::after {
+                width: 100%;
+            }
+        }
+        &.active {
+            color: $color-secondary-select;
+            &::after {
+                content: "";
+                position: absolute;
+                width: 100%;
+                height: 1px;
+                right: 0;
+                bottom: 0;
+                background-color: $color-primary;
+                transition: $hover-transition;
+            }
+            &:hover {
+                &::after {
+                    width: 100%;
+                }
+            }
+        }
+        & > a svg {
+            font-size: 70%;
+            margin-right: 0.1rem;
+            color: $color-bg-gray-1;
+        }
+    }
+}
+.nav-menu {
+    & ul li {
+        color: $color-white;
+    }
+}
+.top-menu,
+.nav-menu {
+    & > div:not(.social-icon) > ul {
+        @include flex();
+        gap: 2rem;
+        & > li {
+            font-size: smaller;
+            position: relative;
+            padding: 10px 0;
+        }
+    }
+    & ul li {
+        &.desc-dropdown {
+            @include flex(center, center, column);
+            & > ul {
+                font-size: small;
+                position: absolute;
+                top: 40px;
+                margin: 0 auto;
+                background-color: $color-primary-light-2;
+                padding: 15px 20px;
+                width: max-content;
+                border-radius: clamp(8px, 10%, 12px);
+                @extend %box-shadow-theme;
+                @include flex(flex-start, start, column);
+                gap: 10px;
+                @extend %fade-out;
+                transition: $cubic-transition;
+
+                & li {
+                    font-size: small;
+                    position: relative;
+                    color: $color-paragraph-title;
+                    &.desc-dropdown-2 {
+                        padding: 10px 0;
+                        @include flex(center, center, column);
+                        position: relative;
+                        & > ul {
+                            font-size: small;
+                            position: absolute;
+                            right: 100%;
+                            top: 0;
+                            margin-right: 20px;
+                            background-color: $color-primary-light-2;
+                            padding: 15px 20px;
+                            width: max-content;
+                            border-radius: clamp(8px, 10%, 12px);
+                            @extend %box-shadow-theme;
+                            @include flex(flex-start, start, column);
+                            gap: 10px;
+                            @extend %fade-out;
+                            transition: $cubic-transition;
+                            z-index: 100;
+
+                            & li {
+                                font-size: small;
+                                &.desc-dropdown-3 {
+                                    @include flex(center, center, column);
+                                    position: relative;
+                                    padding: 10px 0;
+                                    & > ul {
+                                        font-size: small;
+                                        position: absolute;
+                                        right: 100%;
+                                        top: 0;
+                                        margin-right: 20px;
+                                        background-color: $color-primary-light-2;
+                                        padding: 15px;
+                                        width: max-content;
+                                        border-radius: 20px;
+                                        @extend %box-shadow-theme;
+                                        @include flex(flex-start, start, column);
+                                        gap: 10px;
+                                        @extend %fade-out;
+                                        transition: $cubic-transition;
+                                        z-index: 200;
+                                    }
+                                    &:hover {
+                                        & ul {
+                                            @extend %fade-in;
+                                        }
+                                    }
+                                    &::after {
+                                        content: unset;
+                                    }
+                                    &::before {
+                                        font-family: "Font Awesome 6 Free";
+                                        font-weight: 300;
+                                        font-size: 8px;
+                                        content: "\25c4";
+                                        position: absolute;
+                                        top: 20%;
+                                        left: -15px;
+                                        opacity: 0.3;
+                                    }
+                                }
+                            }
+                        }
+                        &:hover {
+                            & ul {
+                                @extend %fade-in;
+                            }
+                        }
+                        &::after {
+                            content: unset;
+                        }
+                        &::before {
+                            font-family: "Font Awesome 6 Free";
+                            font-weight: 300;
+                            font-size: 8px;
+                            content: "\25c4";
+                            position: absolute;
+                            top: 20%;
+                            left: -15px;
+                            opacity: 0.3;
+                        }
+                    }
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        width: 0;
+                        height: 1px;
+                        right: 0;
+                        bottom: 0;
+                        background-color: $color-primary;
+                        transition: $hover-transition;
+                    }
+                    &:hover {
+                        &::after {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+            &:hover {
+                & ul {
+                    @extend %fade-in;
+                }
+            }
+            &::after {
+                content: unset;
+            }
+            &::before {
+                font-family: "Font Awesome 6 Free";
+                font-weight: 300;
+                font-size: 8px;
+                content: "\25c4";
+                position: absolute;
+                transform: rotate(-90deg);
+                top: 35%;
+                left: -10px;
+                opacity: 0.3;
+            }
+        }
+    }
+    & div.social-icon {
+        ul {
+            @include flex(center, center);
+            gap: 1rem;
+            & li:hover a svg {
+                transform: scale(1.2);
+            }
+            & li > a svg {
+                transition: $hover-transition;
+            }
+        }
+    }
+}
+
+.middle-header {
+    @include flex(space-between, center);
+    padding: 10px 0;
+}
+.site-logo {
+    width: 5rem;
+    & > img {
+        width: 5rem;
+    }
+}
+.header-serach {
+    width: 50%;
+}
+.main-nav {
+    background-color: $color-primary-select;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+.desc-btn-header {
+    width: 120px;
+}
+.mobile-header {
+    z-index: 100;
+    background-color: $color-white;
+    position: sticky;
+    top: 0;
+}
+.list-mobile-menu {
+    position: relative;
+    z-index: 200;
+    @include flex(space-between, center);
+    width: 100%;
+    & .mobile-site-logo {
+        width: 4rem;
+        & > img {
+            width: 4rem;
+        }
+    }
+    & .mobile-login-btn {
+        font-size: smaller;
+    }
+    & .mobile-nav-btn {
+        background-color: $color-primary;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        @include flex(center, center);
+        color: $color-white;
+    }
+}
+.mobile-list {
+    position: fixed;
+    width: max-content;
+    height: 100vh;
+    padding: 1.5rem 1rem;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: $color-white;
+    overflow-y: scroll;
+    transform: translateX(25rem);
+    @extend %fade-out;
+    transition: $cubic-transition;
+    z-index: 300;
+    & .header-list {
+        @include flex(center, center, column);
+        gap: 10px;
+        & .social-icon {
+            width: 100%;
+            & > ul {
+                @include flex(center, center);
+                gap: 20px;
+            }
+        }
+        & .mobile-login-btn {
+            width: 100%;
+            & > a {
+                width: 100%;
+                padding: 10px 0;
+            }
+        }
+    }
+    & .body-list {
+        width: 100%;
+        & > ul {
+            justify-content: center;
+        }
+    }
+    & .tab-content {
+        & ul {
+            padding: 1rem 1.5rem;
+
+            & > li {
+                margin-bottom: 1rem;
+                position: relative;
+                & > a > svg {
+                    font-size: 70%;
+                    margin-right: 0.1rem;
+                    color: $color-bg-gray-1;
+                }
+                &.mobile-dropdown {
+                    position: relative;
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        transform: rotate(0deg);
+                        top: 10px;
+                        left: 0;
+                        opacity: 0.5;
+                        width: 10px;
+                        height: 2px;
+                        background-color: red;
+                        transition: $hover-transition;
+                    }
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        transform: rotate(0deg);
+                        top: 5.8px;
+                        left: 4px;
+                        opacity: 0.5;
+                        width: 2px;
+                        height: 10px;
+                        background-color: red;
+                        transition: $hover-transition;
+                    }
+                    &.active {
+                        &::before {
+                            opacity: 0;
+                            transition: $hover-transition;
+                        }
+                    }
+                    & ul {
+                        padding: 10px 10px 0 0;
+                        display: none;
+                        font-size: small;
+                        font-weight: 500;
+                        transition: $hover-transition;
+                    }
+                }
+            }
+        }
+    }
+    &.active {
+        transform: translateX(0);
+        @extend %fade-in;
+    }
+}
+.mobile-list-close {
+    position: absolute;
+    left: 5%;
+    top: 5%;
+    transform: scale(0);
+    @extend %fade-out;
+    transition: $cubic-transition;
+    z-index: 300;
+    background-color: $color-white;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    @include flex(center, center);
+    & > svg {
+        color: red;
+        font-size: 1.5rem;
+        line-height: 0;
+    }
+    &.active {
+        @extend %fade-in;
+        transform: scale(1);
+    }
+}

@@ -1,0 +1,27 @@
+.banner-slider {
+    & .carousel-indicators {
+        bottom: -20px !important;
+        & button {
+            width: 10px !important;
+            height: 10px !important;
+            border-radius: 50%;
+            background-color: $color-primary !important;
+        }
+    }
+
+    & .carousel-control-prev, .carousel-control-next {
+        width: 8% !important;
+        color: $color-primary !important;
+    }
+
+    & .carousel-inner {
+        border-radius: 20px;
+        & .carousel-item {
+        border-radius: 20px;
+        & img {
+            border-radius: 20px;
+        }
+    }
+    }
+    
+}

@@ -1,0 +1,45 @@
+.archive-banner-slider {
+    & .carousel-inner {
+        border-radius: 10px;
+    }
+    & .carousel-indicators {
+        & button {
+            width: 5px !important;
+            height: 5px !important;
+            @media screen and (min-width: 768px) {
+                width: 10px !important;
+            height: 10px !important;
+    }
+        }
+    }
+    & .carousel-control-prev, .carousel-control-next {
+        top: 30px !important;
+    }
+    & .carousel-control-prev-icon::after {
+        font-size: 12px;
+        @media screen and (min-width: 768px) {
+                font-size: 20px;
+    }
+    }
+    & .carousel-control-next-icon::after {
+        font-size: 12px;
+        @media screen and (min-width: 768px) {
+                font-size: 20px;
+    }
+    }
+    & .carousel-item {
+        aspect-ratio: 16 / 5;
+        border-radius: 10px !important;
+        @media screen and (min-width: 768px) {
+                aspect-ratio: 16 / 4;
+    }
+    @media screen and (min-width: 1200px) {
+                aspect-ratio: 16 / 3;
+    }
+        & img {
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px !important;
+        }
+    }
+}

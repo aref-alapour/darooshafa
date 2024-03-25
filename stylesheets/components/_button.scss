@@ -1,0 +1,60 @@
+.btn-theme-p {
+    background-color: $color-primary;
+    border: 1px solid $color-primary;
+    color: $color-white;
+}
+.btn-theme-p:hover {
+    background-color: $color-primary-hover;
+    border: 1px solid $color-primary-hover;
+    color: $color-white;
+}
+.btn-theme-p-out {
+    background-color: unset;
+    border: 1px solid $color-primary;
+    color: $color-primary;
+}
+.btn-theme-p-out:hover {
+    background-color: $color-primary;
+    border: 1px solid $color-primary;
+    color: $color-white;
+}
+.btn-theme-s {
+    background-color: $color-secondary;
+    border: 1px solid $color-secondary;
+    color: $color-white;
+}
+.btn-theme-s:hover {
+    background-color: $color-secondary-hover;
+    border: 1px solid $color-secondary-hover;
+    color: $color-white;
+}
+.btn-theme-s-out {
+    background-color: unset;
+    border: 1px solid $color-secondary;
+    color: $color-secondary;
+}
+.btn-theme-s-out:hover {
+    background-color: $color-secondary;
+    border: 1px solid $color-secondary;
+    color: $color-white;
+}
+.btn-theme-t {
+    background-color: $color-tertiary;
+    border: 1px solid $color-tertiary;
+    color: $color-white;
+}
+.btn-theme-t:hover {
+    background-color: $color-tertiary-hover;
+    border: 1px solid $color-tertiary-hover;
+    color: $color-white;
+}
+.btn-theme-t-out {
+    background-color: unset;
+    border: 1px solid $color-tertiary;
+    color: $color-tertiary;
+}
+.btn-theme-t-out:hover {
+    background-color: $color-tertiary;
+    border: 1px solid $color-tertiary;
+    color: $color-white;
+}

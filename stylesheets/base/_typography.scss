@@ -1,0 +1,32 @@
+h1, h2, h3, h4, h5, h6 {
+    color: $color-head-title;
+    font-weight: bold;
+}
+p {
+    color: $color-paragraph-title;
+    text-align: justify;
+}
+p a {
+    color: $color-primary-select;
+    line-height: 0;
+    transition: all 0.2s ease;
+    font-weight: bolder;
+    &:hover {
+    color: $color-primary-hover;
+}
+}
+.smaller {
+    font-weight: lighter;
+}
+
+.bloder {
+    font-weight: bolder;
+}
+p::selection{
+   color:$color-white;
+   background-color: $color-primary-select;
+}
+.sticky {
+    position: sticky;
+    top: 0;
+}
